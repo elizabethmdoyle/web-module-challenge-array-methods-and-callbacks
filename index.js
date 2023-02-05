@@ -7,16 +7,65 @@ Practice accessing data by console.log-ing the following pieces of data note.
 
 💡 HINT: You may want to filter the data first 😉*/
 
+const filterFourteen = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         filterFourteen.push(fifaData[i])
+    }
+}
+console.log({filterFourteen}, 'filter')
+
 //(a) Home Team name for 2014 world cup final
+const fourteenHome = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         fourteenHome.push(fifaData[i]['Home Team Name'])
+    }
+    
+}
+console.log(fourteenHome, 'task 1a')
 
 //(b) Away Team name for 2014 world cup final
 
+const fourteenAway = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         fourteenAway.push(fifaData[i]['Away Team Name'])
+    }
+    
+}
+console.log(fourteenAway, 'task 1b')
+
 //(c) Home Team goals for 2014 world cup final
 
+const fourteenHomeGoals = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         fourteenHomeGoals.push(fifaData[i]['Home Team Goals'])
+    }
+    
+}
+console.log(fourteenHomeGoals, 'task 1c')
+
 //(d) Away Team goals for 2014 world cup final
+const fourteenAwayGoals = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         fourteenAwayGoals.push(fifaData[i]['Away Team Goals'])
+    }
+    
+}
+console.log(fourteenAwayGoals, 'task 1d')
 
-//(e) Winner of 2014 world cup final */
-
+//(e) Winner of 2014 world cup final 
+const fourteenWin = [];
+for(let i = 0; i < fifaData.length; i++) {
+    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+         fourteenWin.push(fifaData[i]['Win conditions'])
+    }
+    
+}
+console.log(fourteenWin, 'task 1e')
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -26,9 +75,17 @@ Use getFinals to do the following:
 💡 HINT - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-    /* code here */
- }
+function getFinals(fifaData) {
+    let finals = [];
+      for(let i = 0; i < fifaData.length; i++) {
+          if(fifaData[i].Stage.includes('final')) {
+               finals.push(fifaData[i]);
+          }
+   }
+   return finals
+  }
+  
+  console.log(getFinals({fifaData}))
 
 
 
