@@ -78,14 +78,15 @@ Use getFinals to do the following:
 function getFinals(fifaData) {
     let finals = [];
       for(let i = 0; i < fifaData.length; i++) {
-          if(fifaData[i].Stage.includes('final')) {
+          if(fifaData[i].Stage.includes('Final')) {
                finals.push(fifaData[i]);
           }
    }
    return finals
+
   }
   
-  console.log(getFinals({fifaData}))
+  console.log(getFinals(fifaData), 'task 2')
 
 
 
