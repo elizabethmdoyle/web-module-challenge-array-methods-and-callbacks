@@ -7,65 +7,82 @@ Practice accessing data by console.log-ing the following pieces of data note.
 
 💡 HINT: You may want to filter the data first 😉*/
 
-const filterFourteen = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         filterFourteen.push(fifaData[i])
-    }
-}
-console.log({filterFourteen}, 'filter')
+// const filterFourteen = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          filterFourteen.push(fifaData[i])
+//     }
+// }
+// // console.log({filterFourteen}, 'filter')
+
+const finals2014 = fifaData.filter(function(item){
+    return item.Year === 2014 && item.Stage === 'Final';
+})
+
+console.log(finals2014)
 
 //(a) Home Team name for 2014 world cup final
-const fourteenHome = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         fourteenHome.push(fifaData[i]['Home Team Name'])
-    }
+// const fourteenHome = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          fourteenHome.push(fifaData[i]['Home Team Name'])
+//     }
     
-}
-console.log(fourteenHome, 'task 1a')
+// }
+// console.log(fourteenHome, 'task 1a')
+//console logged solution returns inside an [Object], while code below returns item
+
+console.log(finals2014[0][`Home Team Name`], 'task 1a')
 
 //(b) Away Team name for 2014 world cup final
 
-const fourteenAway = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         fourteenAway.push(fifaData[i]['Away Team Name'])
-    }
+// const fourteenAway = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          fourteenAway.push(fifaData[i]['Away Team Name'])
+//     }
     
-}
-console.log(fourteenAway, 'task 1b')
+// }
+// console.log(fourteenAway, 'task 1b')
+console.log(finals2014[0]['Away Team Name'], 'task 1b')
 
 //(c) Home Team goals for 2014 world cup final
 
-const fourteenHomeGoals = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         fourteenHomeGoals.push(fifaData[i]['Home Team Goals'])
-    }
+// const fourteenHomeGoals = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          fourteenHomeGoals.push(fifaData[i]['Home Team Goals'])
+//     }
     
-}
-console.log(fourteenHomeGoals, 'task 1c')
+// }
+// console.log(fourteenHomeGoals, 'task 1c')
+console.log(finals2014[0][`Home Team Goals`], 'task 1c')
+
 
 //(d) Away Team goals for 2014 world cup final
-const fourteenAwayGoals = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         fourteenAwayGoals.push(fifaData[i]['Away Team Goals'])
-    }
+// const fourteenAwayGoals = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          fourteenAwayGoals.push(fifaData[i]['Away Team Goals'])
+//     }
     
-}
-console.log(fourteenAwayGoals, 'task 1d')
+// }
+// console.log(fourteenAwayGoals, 'task 1d')
+
+console.log(finals2014[0][`Away Team Goals`], 'task 1d')
+
 
 //(e) Winner of 2014 world cup final 
-const fourteenWin = [];
-for(let i = 0; i < fifaData.length; i++) {
-    if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
-         fourteenWin.push(fifaData[i]['Win conditions'])
-    }
+// const fourteenWin = [];
+// for(let i = 0; i < fifaData.length; i++) {
+//     if(fifaData[i].Year === 2014 && fifaData[i].Stage === 'Final') {
+//          fourteenWin.push(fifaData[i]['Win conditions'])
+//     }
     
-}
-console.log(fourteenWin, 'task 1e')
+// }
+// console.log(fourteenWin, 'task 1e')
+console.log(finals2014[0][`Win conditions`], 'task 1e')
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
@@ -75,32 +92,55 @@ Use getFinals to do the following:
 💡 HINT - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(fifaData) {
-    let finals = [];
-      for(let i = 0; i < fifaData.length; i++) {
-          if(fifaData[i].Stage.includes('Final')) {
-               finals.push(fifaData[i]);
-          }
-   }
-   return finals
+// function getFinals(fifaData) {
+//     let finals = [];
+//       for(let i = 0; i < fifaData.length; i++) {
+//           if(fifaData[i].Stage.includes('Final')) {
+//                finals.push(fifaData[i]);
+//           }
+//    }
+//    return finals
 
-  }
+//   }
   
-  console.log(getFinals(fifaData), 'task 2')
+//  console.log(getFinals(fifaData), 'task 2')
+// code above does work, however solution below is simplier DRY code using the filter function
+function getFinals(data) {
+        const allFinals = data.filter(function(item) {
+            return item.Stage === 'Final';
+        })
+        return allFinals
+}
 
-
+console.log(getFinals(fifaData), 'task 2')
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
 1. Receive an array as the first parameter that will take fifaData as an argument
-2. Receive a callback function as the second parameter that will take getFinals from task 2 as an argument
-3. Return an array called years containing all of the years in the getFinals data set*/
+L,3. Return an array called years containing all of the years in the getFinals data set*/
 
-function getYears(/* code here */) {
-    /* code here */
+// function getYears(fifaData, getFinals) 
+// {
+//    let finalsList = getFinals(fifaData)
+//      let years = [];
+//    for(let i = 0; i < finalsList.length; i++) {
+//         if(finalsList.year >= 1) {
+//             years.push(finalsList[i].Year)
+//        }
+//    }
+//    console.log(getFinals(fifaData))
+//    return finalsList
+//   }
+
+//  console.log(getYears(fifaData, getFinals), 'task 3')
+
+function getYears(data) {
+    const years = data.filter(function(item) {
+        return item.Year
+    })
+    return years
 }
-
-
+console.log(getYears(fifaData), 'task 3')
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
