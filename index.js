@@ -154,6 +154,7 @@ function getWinners(data, getFInalsCB) {
 
 console.log(getWinners(fifaData, getFinals), 'task 4')
 
+//function uses the terniary operator ? : as a if/else statement inside of the function return
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use the higher-order function getWinnersByYear to do the following:
@@ -166,11 +167,15 @@ Use the higher-order function getWinnersByYear to do the following:
 💡 HINT: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(data, getYearsCB, getWinnersCB) {
+         const winners = getWinnersCB(data, getFinals);
+         const years = getYearsCB(data, getFinals);      
+            
+          return winners.map((item, index)=>  `In ${years[index]}, ${item} won the world cup!`);
+        
 }
 
-
+console.log(getWinnersByYear(fifaData, getYears, getWinners), 'task 5') 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function `getAverageGoals` to do the following: 
